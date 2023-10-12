@@ -9,8 +9,15 @@
 
 #Include "./module/run-app.ahk"
 #Include "./module/global-shortcut.ahk"
-#Include "./module/ctrl-escape.ahk"
-; #Include "./module/caps-ctrl-escape.ahk"
-; #Include "./module/space-fn.ahk"
 
-; run-app有bug，频繁切换chrome和vscode后会失效一阵子
+; 机械接盘 (可以使用驱动改键)
+#Include "./module/ctrl-escape.ahk"
+
+; 薄膜键盘
+; #Include "./module/space-fn.ahk"
+; #Include "./module/caps-ctrl-escape.ahk"
+; #Include "./module/custom.ahk"
+
+
+; bugs
+; run-app: 频繁切换chrome和vscode后会失效一阵子

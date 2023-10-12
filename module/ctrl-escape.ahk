@@ -1,3 +1,5 @@
+#Include "../utils/im-select.ahk"
+
 g_AbortSendEsc := false
 g_LastCtrlKeyDownTime := 0
 
@@ -12,18 +14,22 @@ InstallKeybdHook()
   Send("{LControl Up}")
   current_time := A_TickCount
 
-  if (A_PriorKey = "LControl")
-  {
-
-    ; MsgBox(current_time - g_LastCtrlKeyDownTime, 333)
+  if (A_PriorKey = "LControl") {
     if (g_DoNotAbortSendEsc) {
       if (current_time - g_LastCtrlKeyDownTime > 200) {
         ; MsgBox("A_PriorKey is: " A_PriorKey)
         Send("{LControl}")
       } else {
+        RunImSelect()
         Send("{Esc}")
       }
     }
   }
+
+  return
 }
-return
+
+~Esc:: {
+  RunImSelect()
+  return
+}

@@ -1,7 +1,3 @@
-#SingleInstance Force
-SendMode("Input")
-SetWorkingDir(A_ScriptDir)
-
 confFilePath := "./conf.ini"
 conf := getConf()
 
@@ -14,6 +10,9 @@ for k,v in conf["KEY"] {
 }
 
 ;SpaceFn
++Space::
+^Space::
+^+Space::
 Space::
 {
     global startTime := A_TickCount
@@ -139,7 +138,7 @@ GetDEFAULTConf(){
     keyMap["k"] := "{Up}"
     keyMap["l"] := "{Right}"
     keyMap["u"] := "{Home}"
-    keyMap["o"] := "{End}"
+    keyMap["i"] := "{End}"
     keyMap["["] := "{PgUp}"
     keyMap["]"] := "{PgDn}"
     keyMap["Enter"] := "{End}{Enter}"

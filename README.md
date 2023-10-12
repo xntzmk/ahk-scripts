@@ -14,3 +14,6 @@
 - space-fn: 模拟 space Fn
 - ctrl-escape: ctrl 长按 Ctrl, 短按 Esc
 - caps-ctrl-escape: caps 长按 Ctrl, 短按 Esc
+
+
+

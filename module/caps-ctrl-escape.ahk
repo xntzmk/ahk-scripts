@@ -1,6 +1,6 @@
 
-g_AbortSendEsc := false
-g_LastCtrlKeyDownTime := 0
+g_AbortSendMark := false
+lastMarkKeyDownTime := 0
 
 InstallKeybdHook()
 *CapsLock::
@@ -26,7 +26,7 @@ InstallKeybdHook()
       }
     }
   }
+  return
 }
-return
 
 
