@@ -1,6 +1,6 @@
 lastMarkDownTime := 0
 
-; ? <=> shift 
+; tap: ? && hold: shift 
 InstallKeybdHook()
 */::
 {
