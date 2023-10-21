@@ -3,45 +3,42 @@ SendMode("Input")
 SetWorkingDir(A_ScriptDir)
 
 ; alt + q 映射为 alt + F4
-!q:: 
+!q::
 { ; V1toV2: Added bracket
   Send("!{f4}")
-Return
-
-} 
+  Return
+}
 ; alt + d 映射为 win + d
 !d::
-{ 
+{
   Send("#d")
-Return
-
-} 
+  Return
+}
 ; alt + e 映射为 win + e
-!e:: 
-{ 
+!e::
+{
   Send("#e")
-Return
-
-} 
+  Return
+}
 
 ; * 窗口类 *
 ; win + m, alt + m : 最大化 <=> 还原当前窗口
 #m::
 !m::
-{ 
+{
   S := WinGetMinMax("A")
   if (S = 0)
     WinMaximize("A")
-    else if (S = 1)
+  else if (S = 1)
     WinRestore("A")
-    else if (S = -1)
+  else if (S = -1)
     WinRestore("A")
-return
+  return
+}
 
-} 
 ; alt + n 映射为 最小化当前窗口
-!n:: 
-{ 
+!n::
+{
   WinMinimize("A")
-Return
-} 
+  Return
+}
