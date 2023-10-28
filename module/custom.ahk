@@ -1,28 +1,34 @@
-lastMarkDownTime := 0
+initialTime := 0
 
-; tap: ? && hold: shift 
+; tap: ? && hold: shift
 InstallKeybdHook()
 */::
 {
-  g_DoNotAbortSendEsc := true
+  g_DoNotAbortSendShift := true
 
   Send("{Shift Down}")
-  lastMarkDownTime := A_TickCount
+  initialTime := A_TickCount
   KeyWait("/")
   Send("{Shift Up}")
-  current_time := A_TickCount
+  currentTime := A_TickCount
 
   if (A_PriorKey = "/") {
-    if (g_DoNotAbortSendEsc) {
+    if (g_DoNotAbortSendShift) {
       Send("{Shift}")
-      if (current_time - lastMarkDownTime > 200) {
-        ; MsgBox("A_PriorKey is: " A_PriorKey)
+      if (currentTime - initialTime > 200) {
+        Send("{Shift}")
+        Send("{Shift Up}")
       } else {
-        if (GetKeyState("LShift", "P")) {
-          Send("{?}")
-        } else {
-          Send("{/}")
+        res := "{/}"
+
+        if (GetKeyState("Ctrl", "P")) {
+          res := "^{/}"
         }
+        if (GetKeyState("Shift", "P")) {
+          res := "+{/}"
+        }
+
+        Send(res)
       }
     }
   }

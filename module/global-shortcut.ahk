@@ -4,7 +4,7 @@ SetWorkingDir(A_ScriptDir)
 
 ; alt + q 映射为 alt + F4
 !q::
-{ ; V1toV2: Added bracket
+{
   Send("!{f4}")
   Return
 }
