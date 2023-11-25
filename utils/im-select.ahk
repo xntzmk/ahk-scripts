@@ -5,9 +5,3 @@ RunImSelect() {
     Run(imSelectPath, , "Hide")
   }
 }
-
-~Esc:: {
-  RunImSelect()
-  return
-}
-

@@ -19,6 +19,10 @@ SetWorkingDir(A_ScriptDir)
   Send("#e")
 }
 
+~Esc:: {
+  RunImSelect()
+}
+
 ; ctrl + [ 映射为 esc
 ^[:: {
   RunImSelect()
