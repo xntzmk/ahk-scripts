@@ -1,8 +1,9 @@
-#Include "./module/shortcut.ahk"
-#Include "./module/run-app.ahk"
-
 ; For Vim
 #Include "./utils/im-select.ahk"
+
+; For Windows
+#Include "./module/shortcut.ahk"
+#Include "./module/run-app.ahk"
 
 ; #Include "./module/custom.ahk"
 
