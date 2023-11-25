@@ -2,30 +2,32 @@
 SendMode("Input")
 SetWorkingDir(A_ScriptDir)
 
+; * 快捷键 *
 ; alt + q 映射为 alt + F4
-!q::
-{
+!q:: {
   Send("!{f4}")
   Return
 }
+
 ; alt + d 映射为 win + d
-!d::
-{
+!d:: {
   Send("#d")
-  Return
-}
-; alt + e 映射为 win + e
-!e::
-{
-  Send("#e")
-  Return
 }
 
-; * 窗口类 *
+; alt + e 映射为 win + e
+!e:: {
+  Send("#e")
+}
+
+; ctrl + [ 映射为 esc
+^[:: {
+  Send("{Esc}")
+}
+
+; * 窗口 *
 ; win + m, alt + m : 最大化 <=> 还原当前窗口
 #m::
-!m::
-{
+!m:: {
   S := WinGetMinMax("A")
   if (S = 0)
     WinMaximize("A")
@@ -37,8 +39,7 @@ SetWorkingDir(A_ScriptDir)
 }
 
 ; alt + n 映射为 最小化当前窗口
-!n::
-{
+!n:: {
   WinMinimize("A")
   Return
 }

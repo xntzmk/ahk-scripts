@@ -7,7 +7,7 @@
 ;  注释后面一行内容
 
 #### module
-- global-shortcut: 全局快捷键
+- shortcut: 快捷键
 - run-app: 快速打开应用
 - space-fn: 模拟 space Fn
 
