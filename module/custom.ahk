@@ -1,9 +1,8 @@
 initialTime := 0
 
-; tap: ? && hold: shift
+; 短按 ? 长按 shift
 InstallKeybdHook()
-*/::
-{
+*/::{
   g_DoNotAbortSendShift := true
 
   Send("{Shift Down}")
@@ -32,5 +31,4 @@ InstallKeybdHook()
       }
     }
   }
-  return
 }

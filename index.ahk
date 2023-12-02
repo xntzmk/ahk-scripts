@@ -1,12 +1,15 @@
-; For Vim
+#SingleInstance Force
+SetWorkingDir(A_ScriptDir)
+
+; # Run as administrator
+if not A_IsAdmin {
+	Run("*RunAs `"" A_ScriptFullPath "`"") ; (A_AhkPath is usually optional if the script has the .ahk extension.) You would typically check first.
+}
+
+; * For Vim
 #Include "./utils/im-select.ahk"
 
-; For Windows
-#Include "./module/shortcut.ahk"
+; * Daily 
+#Include "./module/shortcuts.ahk"
 #Include "./module/run-app.ahk"
-
-; #Include "./module/custom.ahk"
-
-; bugs
-; run-app: 频繁切换chrome和vscode后会失效一阵子
 
