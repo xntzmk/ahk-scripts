@@ -74,6 +74,6 @@ $!d:: Send("#d")
 ; * -------- chrome -------- *
 ; ctrl + p -> 聚焦地址栏
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
-^p:: Send("!d")
+^d:: Send("!d")
 ~^r:: Send("{Raw}") 
 #HotIf
