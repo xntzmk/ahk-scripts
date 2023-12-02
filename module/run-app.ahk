@@ -19,15 +19,13 @@ OpenOrActivateApplication(AppName, AppPath) {
 
 ; 打开或激活Vscode
 OpenOrActivateVSCode(vscodePath) {
-  if !WinExist("ahk_exe Code.exe")
-  {
+  if !WinExist("ahk_exe Code.exe") {
     Run(vscodePath)
     WinWait("ahk_exe Code.exe")
   }
 
   ActiveTitle := WinGetTitle("A")
-  If !InStr(ActiveTitle, "Visual Studio Code")
-  {
+  If !InStr(ActiveTitle, "Visual Studio Code") {
     WinActivate("ahk_exe Code.exe")
   }
 }
@@ -37,17 +35,12 @@ vscode := "D:\Microsoft VS Code\Code.exe"
 chrome := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 ; netease := "D:\Netease\CloudMusic\cloudmusic.exe"
 
-; 绑定快捷键 alt+u 打开或激活 VS Code
-!u::
-{
+; alt+u -> 打开或激活 VS Code
+!u:: {
   OpenOrActivateVSCode(vscode)
-  Return
-
-  ; 绑定快捷键 alt+o 打开或激活 Chrome
 }
 
-!o::
-{
+; alt+o -> 打开或激活 Chrome
+!o:: {
   OpenOrActivateApplication("Chrome", chrome)
-  Return
 }
