@@ -24,7 +24,7 @@ SetWorkingDir(A_ScriptDir)
 ; alt + d -> win + d 
 $!d:: Send("#d")
 
-; alt + q -> alt + F4
+; alt + q -> alt + f4
 !q:: Send("!{f4}")
 
 ; alt + n -> 最小化当前窗口
