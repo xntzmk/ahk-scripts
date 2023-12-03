@@ -10,25 +10,37 @@ Run_AsUser(program) {
 }
 
 ; * 打开或激活应用程序
-OpenOrActivateApp(appPath) {
-  if (!WinExist("ahk_exe " appPath)) {
+OpenOrActivateApp(appPath, appClass := "") {
+  target := appClass ? "ahk_class " . appClass : "ahk_exe " . appPath
+
+  if (!WinExist(target)) {
     Run_AsUser(appPath)
+
+    if(appClass){
+      WinWait(target)
+      WinActivate(target)
+    }
+
     return
   }
 
-  if (!WinActive("ahk_exe " appPath)) {
-    WinActivate("ahk_exe " appPath)
+  if (!WinActive(target)) {
+    WinActivate(target)
   }
 }
 
-; 应用程序路径
+; * 应用程序路径
+explorer := "explorer.exe"
 vscode := "D:\Microsoft VS Code\Code.exe"
 chrome := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-; alt+i -> VS Code
+; alt + e -> 文件资源管理器
+!e:: OpenOrActivateApp(explorer, "CabinetWClass")
+
+; alt + i -> VS Code
 !i:: OpenOrActivateApp(vscode)
 Esc & 8:: OpenOrActivateApp(vscode)
 
-; alt+o -> Chrome
+; alt + o -> Chrome
 !o:: OpenOrActivateApp(chrome)
 Esc & 9:: OpenOrActivateApp(chrome)
