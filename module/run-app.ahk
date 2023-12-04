@@ -1,7 +1,3 @@
-#SingleInstance Force
-SendMode("Input")
-SetWorkingDir(A_ScriptDir)
-
 ; * 普通用户身份运行程序
 Run_AsUser(program) {
   ComObject("Shell.Application")
@@ -16,7 +12,7 @@ OpenOrActivateApp(appPath, appClass := "") {
   if (!WinExist(target)) {
     Run_AsUser(appPath)
 
-    if(appClass){
+    if (appClass) {
       WinWait(target)
       WinActivate(target)
     }
@@ -24,12 +20,11 @@ OpenOrActivateApp(appPath, appClass := "") {
     return
   }
 
-  if (!WinActive(target)) {
+  if (!WinActive(target)) 
     WinActivate(target)
-  }
 }
 
-; * 应用程序路径
+; ; * 应用程序路径
 explorer := "explorer.exe"
 vscode := "D:\Microsoft VS Code\Code.exe"
 chrome := "C:\Program Files\Google\Chrome\Application\chrome.exe"
@@ -39,8 +34,6 @@ chrome := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
 ; alt + i -> VS Code
 !i:: OpenOrActivateApp(vscode)
-Esc & 8:: OpenOrActivateApp(vscode)
 
 ; alt + o -> Chrome
 !o:: OpenOrActivateApp(chrome)
-Esc & 9:: OpenOrActivateApp(chrome)
