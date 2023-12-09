@@ -1,9 +1,14 @@
 ; * -------- 被动 -------- *
 ~Esc:: {
+  Send("{Blind}{Esc Down}{Esc Up}")
+  RunImSelect()
+  Send("{Blind}{Esc Down}{Esc Up}")
 }
 
-; ; ctrl + [ 映射为 esc
+; ctrl + [ 映射为 esc
 ^[:: {
+  Send("{Esc}")
+  RunImSelect()
   Send("{Esc}")
 }
 

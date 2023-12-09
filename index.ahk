@@ -9,5 +9,6 @@ if not A_IsAdmin {
 }
 
 ; * Daily 
+#Include "./utils/im-select.ahk"
 #Include "./module/shortcuts.ahk"
 #Include "./module/run-app.ahk"
