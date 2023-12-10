@@ -11,25 +11,19 @@ OpenOrActivateApp(appPath, appClass := "") {
 
   if (!WinExist(target)) {
     Run_AsUser(appPath)
-
-    if (appClass) {
-      WinWait(target)
-      WinActivate(target)
-    }
-
-    return
+    WinWait(target)
   }
 
-  if (!WinActive(target)) 
+  if (!WinActive(target))
     WinActivate(target)
 }
 
-; ; * 应用程序路径
+; * 应用程序路径
 explorer := "explorer.exe"
 vscode := "D:\Microsoft VS Code\Code.exe"
 chrome := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-; alt + e -> 文件资源管理器
+; alt + e -> 文件资源管jk器
 !e:: OpenOrActivateApp(explorer, "CabinetWClass")
 
 ; alt + i -> VS Code

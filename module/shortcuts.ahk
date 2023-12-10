@@ -12,22 +12,15 @@
   Send("{Esc}")
 }
 
+
 ; * -------- 日常 -------- *
 
+; # ctrl 映射
 ; ctrl + r -> f2
 ^r:: Send("{f2}")
 
-; alt + d -> win + d 
-$!d:: Send("#d")
-
-; alt + q -> alt + f4
-!q:: Send("!{f4}")
-
-; alt + n -> 最小化当前窗口
-!n:: WinMinimize("A")
-
-; alt + m -> 最大化、还原窗口
-!m:: {
+; ctrl + m -> 最大化、还原窗口
+^m:: {
   S := WinGetMinMax("A")
   if (S = 0)
     WinMaximize("A")
@@ -36,6 +29,15 @@ $!d:: Send("#d")
   else if (S = -1)
     WinRestore("A")
 }
+
+
+; # alt 映射
+; alt + d -> win + d 
+$!d:: Send("#d")
+
+; alt + q -> alt + f4
+$!q:: Send("!{f4}")
+
 
 ; * -------- 移动 -------- *
 

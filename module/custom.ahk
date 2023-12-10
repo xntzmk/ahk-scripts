@@ -2,7 +2,7 @@ initialTime := 0
 
 ; 短按 ? 长按 shift
 InstallKeybdHook()
-*/::{
+*/:: {
   g_DoNotAbortSendShift := true
 
   Send("{Shift Down}")
