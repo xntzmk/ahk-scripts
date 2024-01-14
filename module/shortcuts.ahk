@@ -5,12 +5,13 @@
   Send("{Blind}{Esc Down}{Esc Up}")
 }
 
-; ctrl + [ 映射为 esc
-^[:: {
-  Send("{Esc}")
-  RunImSelect()
-  Send("{Esc}")
-}
+; ! 已使用原生Esc
+; ctrl + [ 映射为 Esc
+; ^[:: {
+;   Send("{Esc}")
+;   RunImSelect()
+;   Send("{Esc}")
+; }
 
 
 ; * -------- 日常 -------- *
