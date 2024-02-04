@@ -5,15 +5,6 @@
   Send("{Blind}{Esc Down}{Esc Up}")
 }
 
-; ! 已使用原生Esc
-; ctrl + [ 映射为 Esc
-; ^[:: {
-;   Send("{Esc}")
-;   RunImSelect()
-;   Send("{Esc}")
-; }
-
-
 ; * -------- 日常 -------- *
 
 ; # ctrl 映射
@@ -39,20 +30,19 @@ $!d:: Send("#d")
 ; alt + q -> alt + f4
 $!q:: Send("!{f4}")
 
+; alt + l -> windos锁定
+$!l:: DllCall('LockWorkStation')
+
 
 ; * -------- 移动 -------- *
 
 ; 左
 ^h:: Send("{Left}")        ; ctrl + h -> left
-^!h:: Send("^{Left}")      ; ctrl + alt + h -> ctrl + left
-^+h:: Send("+{Left}")      ; ctrl + shift + h -> shift + left
-^!+h:: Send("^+{Left}")    ; ctrl  + shift + alt + h -> ctrl + shift + left
+^+h:: Send("+{Left}")
 
 ; 右
 ^l:: Send("{Right}")
-^!l:: Send("^{Right}")
 ^+l:: Send("+{Right}")
-^!+l:: Send("^+{Right}")
 
 ; 上
 ^k:: Send("{Up}")
@@ -73,7 +63,7 @@ $!q:: Send("!{f4}")
 ; * -------- chrome -------- *
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
 ; ctrl + d -> 聚焦地址栏
-^d:: Send("!d")
+^p:: Send("!d")
 
 ~^r:: Send("{Raw}") 
 #HotIf
