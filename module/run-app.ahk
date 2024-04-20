@@ -9,7 +9,8 @@ RunAsUser(program) {
 appPaths := {
   explorer: "explorer.exe",
   vscode: "D:\Microsoft VS Code\Code.exe",
-  chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe"
+  chrome: "D:\CentBrowser\Application\chrome.exe"
+  ; chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe"
 }
 
 ; * 打开或激活应用程序
