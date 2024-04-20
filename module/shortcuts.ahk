@@ -67,8 +67,14 @@ XButton1:: Send("#{Tab}")
 
 ; * -------- chrome -------- *
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
-; ctrl + d -> 聚焦地址栏
+; ctrl + p -> 聚焦地址栏
 ^p:: Send("!d")
 
 ~^r:: Send("{Raw}") 
+#HotIf
+
+; * -------- vscode -------- *
+#HotIf WinActive("ahk_exe code.exe") && WinGetProcessName("ahk_exe code.exe")
+~^i:: Send("{Raw}") 
+~^o:: Send("{Raw}") 
 #HotIf
