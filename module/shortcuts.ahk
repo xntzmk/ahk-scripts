@@ -1,8 +1,8 @@
 ; * -------- 被动 -------- *
 ~Esc:: {
-  Send("{Blind}{Esc Down}{Esc Up}")
+  ; Send("{Blind}{Esc Down}{Esc Up}")
   RunImSelect()
-  Send("{Blind}{Esc Down}{Esc Up}")
+  ; Send("{Blind}{Esc Down}{Esc Up}")
 }
 
 ; * -------- 日常 -------- *
@@ -24,6 +24,9 @@
 
 
 ; # alt 映射
+; alt + u -> win + x
+$!u:: Send("#x")
+
 ; alt + d -> win + d 
 $!d:: Send("#d")
 
@@ -34,12 +37,14 @@ $!q:: Send("!{f4}")
 $!l:: DllCall('LockWorkStation')
 
 
+; 鼠标侧键 => win + tab
+XButton1:: Send("#{Tab}")
+
 ; * -------- 移动 -------- *
 
 ; 左
 ^h:: Send("{Left}")        ; ctrl + h -> left
 ^+h:: Send("+{Left}")
-
 ; 右
 ^l:: Send("{Right}")
 ^+l:: Send("+{Right}")
@@ -57,8 +62,8 @@ $!l:: DllCall('LockWorkStation')
 ^+i:: Send("+{Home}")
 
 ; END
-^o:: Send("{End}")
 ^+o:: Send("+{End}")
+^o:: Send("{End}")
 
 ; * -------- chrome -------- *
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
