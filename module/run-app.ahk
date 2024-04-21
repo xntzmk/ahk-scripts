@@ -14,8 +14,8 @@ appPaths := {
 }
 
 ; * 打开或激活应用程序
-OpenOrActivateApp(appPath, appClass := "") {
-  target := appClass ? "ahk_class " . appClass : "ahk_exe " . appPath
+OpenOrActivateApp(appPath) {
+  target := "ahk_exe " . appPath
 
   if (!WinExist(target)) {
     RunAsUser(appPath)
@@ -29,9 +29,6 @@ OpenOrActivateApp(appPath, appClass := "") {
     WinActivate(target)
   }
 }
-
-; alt + e -> 文件资源管理器
-!e:: OpenOrActivateApp(appPaths.explorer, "CabinetWClass")
 
 ; alt + i -> VS Code
 !i:: OpenOrActivateApp(appPaths.vscode)
