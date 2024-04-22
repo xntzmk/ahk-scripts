@@ -27,7 +27,7 @@
 ; alt + u -> win + x
 $!u:: Send("#x")
 
-; alt + d -> win + d 
+; alt + d -> win + d
 $!d:: Send("#d")
 
 ; alt + q -> alt + f4
@@ -44,18 +44,17 @@ XButton1:: Send("#{Tab}")
 
 ; 左
 ^h:: Send("{Left}")        ; ctrl + h -> left
-^+h:: Send("+{Left}")
+^b:: Send("^{Left}")       ; ctrl + e -> ctrl + left
+
 ; 右
 ^l:: Send("{Right}")
-^+l:: Send("+{Right}")
+^e:: Send("^{Right}")
 
 ; 上
 ^k:: Send("{Up}")
-^+k:: Send("+{Up}")
 
 ; 下
 ^j:: Send("{Down}")
-^+j:: Send("+{Down}")
 
 ; HOME
 ^i:: Send("{Home}")
@@ -70,11 +69,11 @@ XButton1:: Send("#{Tab}")
 ; ctrl + p -> 聚焦地址栏
 ^p:: Send("!d")
 
-~^r:: Send("{Raw}") 
+~^r:: Send("{Raw}")
 #HotIf
 
 ; * -------- vscode -------- *
 #HotIf WinActive("ahk_exe code.exe") && WinGetProcessName("ahk_exe code.exe")
-~^i:: Send("{Raw}") 
-~^o:: Send("{Raw}") 
+~^i:: Send("{Raw}")
+~^o:: Send("{Raw}")
 #HotIf
