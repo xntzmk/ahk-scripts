@@ -5,6 +5,13 @@
   ; Send("{Blind}{Esc Down}{Esc Up}")
 }
 
+; * ctrl + [ 映射为 Esc
+^[:: {
+  Send("{Esc}")
+  RunImSelect()
+  Send("{Esc}")
+}
+
 ; * -------- 日常 -------- *
 
 ; # ctrl 映射
@@ -37,8 +44,9 @@ $!q:: Send("!{f4}")
 $!l:: DllCall('LockWorkStation')
 
 
-; 鼠标侧键 => win + tab
-XButton1:: Send("#{Tab}")
+; * 鼠标侧键 => win + tab
+; XButton1:: Send("#{Tab}")
+; XButton2:: Send("#{Tab}")
 
 ; * -------- 移动 -------- *
 
