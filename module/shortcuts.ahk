@@ -30,9 +30,7 @@
 }
 
 
-; # alt 映射
-; alt + u -> win + x
-$!u:: Send("#x")
+; * alt 映射
 
 ; alt + d -> win + d
 $!d:: Send("#d")
@@ -52,11 +50,9 @@ $!l:: DllCall('LockWorkStation')
 
 ; 左
 ^h:: Send("{Left}")        ; ctrl + h -> left
-^b:: Send("^{Left}")       ; ctrl + e -> ctrl + left
 
 ; 右
 ^l:: Send("{Right}")
-^e:: Send("^{Right}")
 
 ; 上
 ^k:: Send("{Up}")
