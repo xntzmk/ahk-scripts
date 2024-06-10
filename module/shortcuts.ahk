@@ -18,18 +18,6 @@
 ; ctrl + r -> f2
 ^r:: Send("{f2}")
 
-; ctrl + m -> 最大化、还原窗口
-^m:: {
-  S := WinGetMinMax("A")
-  if (S = 0)
-    WinMaximize("A")
-  else if (S = 1)
-    WinRestore("A")
-  else if (S = -1)
-    WinRestore("A")
-}
-
-
 ; * alt 映射
 
 ; alt + d -> win + d
@@ -72,6 +60,9 @@ $!l:: DllCall('LockWorkStation')
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
 ; ctrl + p -> 聚焦地址栏
 ^p:: Send("!d")
+
+; ctrl + . -> alt + .
+^.:: Send("!.")
 
 ~^r:: Send("{Raw}")
 #HotIf
