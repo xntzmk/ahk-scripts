@@ -5,12 +5,10 @@
 ;     .Document.Application.ShellExecute(program)
 ; }
 
-; * 应用程序路径
 ; appPaths := {
-;   explorer: "explorer.exe",
 ;   vscode: "D:\Microsoft VS Code\Code.exe",
-;   chrome: "D:\CentBrowser\Application\chrome.exe"
-;   ; chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe"
+;   chrome: "D:\CentBrowser\Application\chrome.exe",
+;   chrome: "C:\Program Files\Google\Chrome\Application\chrome.exe"
 ; }
 
 ; * 打开或激活应用程序
@@ -30,8 +28,12 @@
 ;   }
 ; }
 
-; alt + i -> VS Code
 ; !i:: OpenOrActivateApp(appPaths.vscode)
-
-; alt + o -> Chrome
 ; !o:: OpenOrActivateApp(appPaths.chrome)
+
+; * 运行资源管理器
+!e:: {
+  Run("explorer.exe shell:downloads")
+  WinWaitActive("ahk_class CabinetWClass")
+  WinActivate("ahk_class CabinetWClass")
+}
