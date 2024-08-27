@@ -1,8 +1,8 @@
 ; * -------- 被动 -------- *
 ~Esc:: {
-  Send("{Blind}{Esc Down}{Esc Up}")
+  ; Send("{Esc Down}{Esc Up}")
   RunImSelect()
-  Send("{Blind}{Esc Down}{Esc Up}")
+  Send("{Esc}")
 }
 
 ; * ctrl + [ 映射为 Esc
@@ -13,21 +13,17 @@
 }
 
 ; * -------- 日常 -------- *
-
-; # ctrl 映射
 ; ctrl + r -> f2
 ^r:: Send("{f2}")
-
-; * alt 映射
-
-; alt + d -> win + d
-$!d:: Send("#d")
 
 ; alt + q -> alt + f4
 $!q:: Send("!{f4}")
 
-; alt + l -> windos锁定
-$!l:: DllCall('LockWorkStation')
+; ctrl + alt + d -> win + d
+$^!d:: Send("#d")
+
+; ctrl + alt + l -> windos锁定
+$^!l:: DllCall('LockWorkStation')
 
 
 ; * 鼠标侧键 => win + tab
@@ -35,9 +31,8 @@ $!l:: DllCall('LockWorkStation')
 ; XButton2:: Send("#{Tab}")
 
 ; * -------- 移动 -------- *
-
 ; 左
-^h:: Send("{Left}")        ; ctrl + h -> left
+^h:: Send("{Left}")   ; ctrl + h -> left
 
 ; 右
 ^l:: Send("{Right}")
@@ -69,6 +64,6 @@ $!l:: DllCall('LockWorkStation')
 
 ; * -------- vscode -------- *
 #HotIf WinActive("ahk_exe code.exe") && WinGetProcessName("ahk_exe code.exe")
-~^i:: Send("{Raw}")
-~^o:: Send("{Raw}")
+; ~^i:: Send("{Raw}")
+; ~^o:: Send("{Raw}")
 #HotIf
