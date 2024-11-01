@@ -1,6 +1,6 @@
 ; * 针对搜狗输入法
 RunImSelect() {
-  if (WinActive("ahk_exe Code.exe")) {
+  if (WinActive("ahk_exe Code.exe") || WinActive("ahk_exe Cursor.exe")) {
     if (getLanguage() !== '0') {
       setLanguage('0')
     }

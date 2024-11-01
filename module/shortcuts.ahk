@@ -32,38 +32,29 @@ $^!l:: DllCall('LockWorkStation')
 
 ; * -------- 移动 -------- *
 ; 左
-^h:: Send("{Left}")   ; ctrl + h -> left
+; ^h:: Send("{Left}")   ; ctrl + h -> left
 
-; 右
-^l:: Send("{Right}")
+; ; 右
+; ^l:: Send("{Right}")
 
-; 上
-^k:: Send("{Up}")
+; ; 上
+; ^k:: Send("{Up}")
 
-; 下
-^j:: Send("{Down}")
+; ; 下
+; ^j:: Send("{Down}")
 
-; HOME
-^i:: Send("{Home}")
-^+i:: Send("+{Home}")
+; ; HOME
+; ^i:: Send("{Home}")
+; ^+i:: Send("+{Home}")
 
-; END
-^+o:: Send("+{End}")
-^o:: Send("{End}")
+; ; END
+; ^+o:: Send("+{End}")
+; ^o:: Send("{End}")
 
 ; * -------- chrome -------- *
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
 ; ctrl + p -> 聚焦地址栏
 ^p:: Send("!d")
 
-; ctrl + . -> alt + .
-^.:: Send("!.")
-
 ~^r:: Send("{Raw}")
-#HotIf
-
-; * -------- vscode -------- *
-#HotIf WinActive("ahk_exe code.exe") && WinGetProcessName("ahk_exe code.exe")
-; ~^i:: Send("{Raw}")
-; ~^o:: Send("{Raw}")
 #HotIf
