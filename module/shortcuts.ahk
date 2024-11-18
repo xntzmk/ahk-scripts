@@ -5,56 +5,38 @@
   Send("{Esc}")
 }
 
-; * ctrl + [ 映射为 Esc
-^[:: {
-  Send("{Esc}")
-  RunImSelect()
-  Send("{Esc}")
-}
-
-; * -------- 日常 -------- *
-; ctrl + r -> f2
+; 日常
+; F2
 ^r:: Send("{f2}")
 
-; alt + q -> alt + f4
+; Alt + F4
 $!q:: Send("!{f4}")
 
-; ctrl + alt + d -> win + d
-$^!d:: Send("#d")
-
-; ctrl + alt + l -> windos锁定
-$^!l:: DllCall('LockWorkStation')
-
-
-; * 鼠标侧键 => win + tab
+; 鼠标侧键
 ; XButton1:: Send("#{Tab}")
 ; XButton2:: Send("#{Tab}")
 
-; * -------- 移动 -------- *
-; 左
-; ^h:: Send("{Left}")   ; ctrl + h -> left
+; 移动
+!h:: Send("{Left}")
+!l:: Send("{Right}")
+!k:: Send("{Up}")
+!j:: Send("{Down}")
+!i:: Send("{Home}")
+!o:: Send("{End}")
 
-; ; 右
-; ^l:: Send("{Right}")
-
-; ; 上
-; ^k:: Send("{Up}")
-
-; ; 下
-; ^j:: Send("{Down}")
-
-; ; HOME
-; ^i:: Send("{Home}")
-; ^+i:: Send("+{Home}")
-
-; ; END
-; ^+o:: Send("+{End}")
-; ^o:: Send("{End}")
-
-; * -------- chrome -------- *
+; Chrome
 #HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
 ; ctrl + p -> 聚焦地址栏
 ^p:: Send("!d")
 
 ~^r:: Send("{Raw}")
+#HotIf
+
+; VSCode / Cursor
+isCodeExe() {
+  return WinActive("ahk_exe code.exe") || WinActive("ahk_exe cursor.exe")
+}
+
+#HotIf isCodeExe()
+^space:: Send("^{p}%")
 #HotIf
