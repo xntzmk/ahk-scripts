@@ -24,16 +24,22 @@ $!q:: Send("!{f4}")
 !i:: Send("{Home}")
 !o:: Send("{End}")
 
-; Chrome
-#HotIf WinActive("ahk_exe chrome.exe") && WinGetProcessName("ahk_exe chrome.exe")
-~^r:: Send("{Raw}")
-#HotIf
 
-; VSCode / Cursor
-isCodeExe() {
-  return WinActive("ahk_exe code.exe") || WinActive("ahk_exe cursor.exe")
+; Browser
+isChrome() {
+  return WinActive("ahk_exe chrome.exe")
+}
+isEdge() {
+  return WinActive("ahk_exe msedge.exe")
+}
+isFirefox() {
+  return WinActive("ahk_exe firefox.exe")
 }
 
-#HotIf isCodeExe()
-^space:: Send("^{p}%")
+isBrowser() {
+  return isChrome() || isEdge() || isFirefox()
+}
+
+#HotIf isBrowser()
+~^r:: Send("{Raw}")
 #HotIf
