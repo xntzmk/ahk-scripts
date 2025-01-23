@@ -35,9 +35,12 @@ isEdge() {
 isFirefox() {
   return WinActive("ahk_exe firefox.exe")
 }
+isCatsxp() {
+  return WinActive("ahk_exe catsxp.exe") ; 猫眼浏览器
+}
 
 isBrowser() {
-  return isChrome() || isEdge() || isFirefox()
+  return isChrome() || isEdge() || isFirefox() || isCatsxp()
 }
 
 #HotIf isBrowser()
