@@ -1,11 +1,3 @@
-; * -------- 被动 -------- *
-~Esc:: {
-  ; Send("{Esc Down}{Esc Up}")
-  RunImSelect()
-  Send("{Esc}")
-}
-
-; 日常
 ; F2
 ^r:: Send("{f2}")
 
@@ -24,8 +16,7 @@ $!q:: Send("!{f4}")
 !i:: Send("{Home}")
 !o:: Send("{End}")
 
-
-; Browser
+; 浏览器
 isChrome() {
   return WinActive("ahk_exe chrome.exe")
 }
@@ -45,4 +36,16 @@ isBrowser() {
 
 #HotIf isBrowser()
 ~^r:: Send("{Raw}")
+#HotIf
+
+; 编程
+isCoding() {
+  return WinActive("ahk_exe code.exe") || WinActive("ahk_exe cursor.exe")
+}
+
+#HotIf isCoding()
+~Esc:: {
+  RunImSelect()
+  Send("{Esc}")
+}
 #HotIf
