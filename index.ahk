@@ -11,3 +11,4 @@ if not A_IsAdmin {
 #Include "./utils/im-select.ahk"
 #Include "./module/shortcuts.ahk"
 #Include "./module/run-app.ahk"
+#Include "./module/specialCtrl.ahk"

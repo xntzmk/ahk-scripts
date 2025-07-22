@@ -46,6 +46,5 @@ isCoding() {
 #HotIf isCoding()
 ~Esc:: {
   RunImSelect()
-  Send("{Esc}")
 }
 #HotIf

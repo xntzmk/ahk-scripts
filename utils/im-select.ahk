@@ -83,7 +83,7 @@ setLanguage(setSts, WinTitle := "") {
 }
 
 ; 可以设置按键来调试, 如下, 按下a键, 弹出MsgBox消息框, 且在鼠标位置显示文本(ToolTip)
-; a::{
-;   xxx := IME_GET()
+; F12:: {
+;   xxx := getLanguage()
 ;   MsgBox("输入法状态 1中文 0英文: " xxx)
 ; }
