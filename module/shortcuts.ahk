@@ -8,6 +8,14 @@ $!q:: Send("!{f4}")
 ; XButton1:: Send("#{Tab}")
 ; XButton2:: Send("#{Tab}")
 
+; 移动
+!h:: Send("{Left}")
+!l:: Send("{Right}")
+!k:: Send("{Up}")
+!j:: Send("{Down}")
+!i:: Send("{Home}")
+!o:: Send("{End}")
+
 ; 浏览器
 isChrome() {
   return WinActive("ahk_exe chrome.exe")
