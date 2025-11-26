@@ -16,29 +16,19 @@ $!q:: Send("!{f4}")
 !i:: Send("{Home}")
 !o:: Send("{End}")
 
-; 浏览器
-isChrome() {
-  return WinActive("ahk_exe chrome.exe")
-}
-isEdge() {
-  return WinActive("ahk_exe msedge.exe")
-}
-isFirefox() {
-  return WinActive("ahk_exe firefox.exe")
-}
-isCatsxp() {
-  return WinActive("ahk_exe catsxp.exe") ; 猫眼浏览器
-}
-
-isBrowser() {
-  return isChrome() || isEdge() || isFirefox() || isCatsxp()
+BrowserExes := ["chrome.exe", "msedge.exe", "firefox.exe", "catsxp.exe"]
+isBrowser(exeName := "") {
+  for _, exe in BrowserExes {
+    if (WinActive("ahk_exe " . exe))
+      return true
+  }
+  return false
 }
 
 #HotIf isBrowser()
 ~^r:: Send("{Raw}")
 #HotIf
 
-; 编程
 isCoding() {
   return WinActive("ahk_exe code.exe") || WinActive("ahk_exe cursor.exe")
 }
